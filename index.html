@@ -20,16 +20,39 @@
     
 <body>
 
-<header style="background-color: #FFFFFF; color: #000000;">
-  <marquee class="ticker">
-  EDIN&nbsp;&nbsp;&nbsp;EDIN&nbsp;&nbsp;&nbsp;EDIN&nbsp;&nbsp;&nbsp;EDIN&nbsp;&nbsp;&nbsp;EDIN
-  </marquee>
+<header class="ticker-wrapper">
+  <div class="ticker-track">
+    <span>EDIN&nbsp;&nbsp;EDIN&nbsp;&nbsp;EDIN&nbsp;&nbsp;EDIN&nbsp;&nbsp;EDIN&nbsp;&nbsp;EDIN&nbsp;&nbsp;</span>
+    <span>EDIN&nbsp;&nbsp;EDIN&nbsp;&nbsp;EDIN&nbsp;&nbsp;EDIN&nbsp;&nbsp;EDIN&nbsp;&nbsp;EDIN&nbsp;&nbsp;</span>
+  </div>
 </header>
 
 <style>
-.ticker {
-  font-size: 4rem;
+.ticker-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 10s linear infinite;
+}
+
+.ticker-track span {
+  font-size: 5rem;
   font-weight: bold;
+  white-space: nowrap;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 </style>
     
